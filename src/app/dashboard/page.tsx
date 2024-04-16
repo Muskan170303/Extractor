@@ -1,6 +1,7 @@
 import { DarkModeToggle } from "@/components/dark-mode-toggle";
 import { Chat } from "@/components/chat";
 import  InputFile  from "@/components/upload";
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
         <DarkModeToggle />
       </div>
       <div className="p-8 text-xl font-bold flex h-14 items-center justify-between supports-backdrop-blur:bg-background/60 sticky top-0 z-50 w-full bg-background/95 backdrop-blur">
-      <h1>Welcome to Text Extractor</h1>  
+      <h1>Welcome to Text Extractor</h1> 
+      <Link href="/">Home</Link> 
       </div>
       <div className="flex flex-1 py-4">
         
