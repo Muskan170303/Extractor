@@ -1,0 +1,25 @@
+import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
+import { HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
+
+export const streamingModel = new ChatGoogleGenerativeAI({
+    model: "gemini-pro",
+    streaming:true,
+    verbose:true,
+    safetySettings: [
+      {
+        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+        threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+      },
+    ],
+  });
+
+export const nonStreamingModel = new ChatGoogleGenerativeAI({
+    model: "gemini-pro",
+    verbose:true,
+    safetySettings: [
+      {
+        category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+        threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
+      },
+    ],
+  });
